@@ -1,5 +1,8 @@
-export default function TypeCard() {
+export default function TypeCard(props) {
+    const {type} = props
     return(
-        <div></div>
+        <div className="type-tile">
+            <p>{type}</p>
+        </div>
     )
 }
