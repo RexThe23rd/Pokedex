@@ -4,8 +4,8 @@ import TypeCard from './TypeCard'
 
 export default function PokeCard(props) {
     const { selectedPokemon } = props
-    const [data, setData] = useState("null")
-    const [loading, setLoading] = useState("false")
+    const [data, setData] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     const { name, height, abilities, stats, types, moves, sprites } = data || {}
 
