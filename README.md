@@ -1,1 +1,1 @@
-Pokedex following Smoljames' Reactjs course!
+Pokedex following Smoljames' Reactjs course
