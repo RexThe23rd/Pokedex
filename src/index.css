@@ -110,11 +110,11 @@ h3 {
 .nav-card:hover {
   transform: translate(0);
   box-shadow: none;
-  background: var(--background-muted);
+  background: linear-gradient(to right, #fafcf82d 5%, #05070F)/*var(--background-muted)*/;
 }
 
 .nav-card-selected {
-  background: var(--background-muted);
+  background: linear-gradient(to right, #121a36 5%, #05070F)/*var(--background-muted)*/;
   border: 1px solid (--border-primary)
 }
 
