@@ -38,8 +38,21 @@ export default function PokeCard(props) {
             const moveData = await res.json()
             console.log('Fetched move from API', moveData)
             const description = moveData?.flavor_text_entries.filter(val => {
-                return val.version_group.name = 'firered-leafgreen'
-            })[5]?.flavor_text
+                return val.version_group.name === 'firered-leafgreen'
+            })[0]?.flavor_text
+            || (() => {
+                const fallback = moveData?.flavor_text_entries?.find(val => val.language.name === 'en');
+                if (!fallback) return 'No description available';
+                const moveText = fallback.flavor_text;
+                const formattedVersion = fallback.version_group.name
+                .split('-')
+                .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+                .reduce((acc, curr, i, arr) =>
+                    i === arr.length / 2 ? acc + ' and ' + curr : acc + (i === 0 ? '' : ' ') + curr,
+                    ''
+                );
+                return `${moveText} — Move only available in ${formattedVersion} onwards`;
+            })();
 
             const skillData = {
                 name : move, description
