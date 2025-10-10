@@ -1,5 +1,9 @@
 export default function Header () {
     return(
-        <header></header>
+        <header>
+            <button className="open-nav-button">
+                <i className="fa-solid fa-bars"></i>
+            </button>
+        </header>
     )
 }
